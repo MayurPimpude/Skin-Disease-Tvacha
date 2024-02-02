@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Home Page</title>
+
+</head>
+<body>
+    <!------------------------------ Navigation Bar ------------------------------------->
+    <nav class="bg-gray-50 dark:bg-gray-800">
+        <div class="flex flex-row justify-between p-2"> 
+            <!-- Website Logo -->
+            <div class="mx-5 flex flex-row items-center">
+                
+            </div>
+
+            <div class="hidden md:flex flex-row items-center">
+                <!-- NavBar -->
+                
+                <div class="mr-9">
+                    <ul class="flex flex-row space-x-9 text-white">
+                        <li class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"><a href="/Appoint">Book an Appointment</a></li>
+                        <li class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"><a href="test.html" >Take The Test</a></li>
+                        <li class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"><a href="" ><form action="/Donate" method="post"><button type="submit">Donate Us</button></form> </a></li>
+                    </ul>
+                </div>
+
+            
+
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex flex-row items-center h-12 w-12">
+                <button class="p-2 bg-[#F9D0BE] rounded mobile-menu-button">
+                    <img src="../static/images/mobile-menu-icon.png" class="w-4 h-4">
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile NavBar -->
+        <div class="hidden mobile-menu md:hidden bg-[#F9D0BE]">
+            <ul class=" text-center py-1">
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/Appointment">Book an Appointment</a></li>
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="test.html">Take Test</a></li>
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/Donate">Donate</a></li>
+                <li class="p-2 ml-12 mr-12 bg-[#f56556] m-1 rounded"><a class=" text-white hover:text-black" href="/Logout">Sign Out</a></li>
+            </ul>
+        </div>
+
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+            const dropdownBtn = document.querySelector("#dropdownDefaultButton");
+            const dropdownMenu = document.querySelector("#dropdown");
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+            dropdownBtn.addEventListener("click", ()=>{
+                dropdownMenu.classList.toggle("hidden");
+            })
+        </script>
+    </nav>
+
+
+
+    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen " aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+           <ul class="space-y-2">
+            <div class="mx-5 flex flex-col justify-center items-center mt-6 mb-6">
+                <img src="../static/images/logo.jpg" class="rounded-full w-14 h-14"> 
+                <h1 class="text-white m-3">Sam Joseph</h1>
+            </div>
+              <li>
+                 <a href="/ " class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Home</span>
+                 </a>
+              </li>
+              <li>
+                 <a href="/contact" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Contact US</span>
+                 </a>
+              </li>
+              <li>
+                <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                   <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                   <span class="flex-1 ml-3 whitespace-nowrap">Reports</span>
+                </a>
+             </li>
+              <li>
+                <a href="/Test" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                   <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"></path></svg>
+                   <span class="flex-1 ml-3 whitespace-nowrap">Skin Test</span>
+                </a>
+             </li>
+             <li>
+                <a href="/hairtest" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                   <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path></svg>
+                   <span class="flex-1 ml-3 whitespace-nowrap">Hair Test</span>
+                </a>
+             </li>
+              <li>
+                 <a href="/" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path></svg>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Sign Out</span>
+                 </a>
+              </li>
+              
+           </ul>
+        </div>
+     </aside>
+
+
+     <section class="bg-[#baf8fd]">
+        <div class="p-10 ">
+            <h1 class="text-black text-center ml-40 text-3xl font-bold">Welcome <span class="text-[rgb(18,102,241)] font-extrabold">Sam Joseph</span></h1>
+        </div>
+        <hr class="bg-black text-black text-2xl font-extrabold h-0.5">
+        <div class="flex flex-row justify-center items-center ml-40 mt-12">
+            <iframe src="../static/pdf/medical_report.pdf" class="w-96 h-96 rounded-xl"></iframe>
+        </div>
+     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+</html>

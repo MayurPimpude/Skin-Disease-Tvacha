@@ -12,11 +12,11 @@ import numpy as np
 from pymongo import MongoClient
 from hashes import hashed
 
-stripe.api_key = "sk_test_51Mf5iMSHP7cyCBSwbnncFvTrRnH4J0rwq5WJQklUaTtMnPK3KOA2v08cRX457eu1GY4nY67Yst9SXegWba4wc11L00b5LLpjmB"
+stripe.api_key = "sk_test_51Mf5iMSHP7cyCBnY67Yst9SXegWba4wc11L00b5LLpjmB"
 
 YOUR_DOMAIN = "http://localhost:5000"
 
-API_KEY='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'
+API_KEY='sk-LFhkuyKIPelGOc5yfKRR'
 
 os.environ['OPENAI_Key']=API_KEY
 openai.api_key=os.environ['OPENAI_Key']
@@ -338,8 +338,8 @@ def contact():
      
         smtpHost = "smtp.gmail.com"
         smtpPort = 587
-        mailUname = 'eventual274@gmail.com'
-        mailPwd = 'hnauqvpjdiqwwovq'
+        mailUname = 'eventu@gmail.com'
+        mailPwd = 'hnaq'
         fromEmail = 'eventual274@gmail.com'
 
         # mail body, recepients, attachment files

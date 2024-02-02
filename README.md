@@ -8,7 +8,7 @@ Follow these steps to clone and run the Skin and Hair Disease Detection project 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/MayurPimpude/Skin-Disease
+   git clone https://github.com/MayurPimpude/Skin-Disease-Tvacha
    cd skin-hair-disease-detection
    ```
 
